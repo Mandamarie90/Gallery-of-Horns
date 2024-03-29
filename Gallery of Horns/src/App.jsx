@@ -1,17 +1,26 @@
-import Header from './components/Header.jsx'
-import Footer from './components/Footer.jsx'
-import Gallery from './components/Gallery.jsx'
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import Gallery from './components/Gallery.jsx';
+import hornedBeastsData from '../hornedBeastsData.json'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+function App() {
+  const [selectedBeast, setSelectedBeast] = useState(null);
 
-     function App() {
-return (
-  <>
-    <Header title="My Title" />
-    <Gallery />
-    <Footer />
-  </>
-)
+  const handleBeastSelect = (beast) => {
+    setSelectedBeast(beast); 
+  };
+
+  return (
+    <>
+      <Gallery beasts={hornedBeastsData} onSelectBeast={handleBeastSelect} />
+      {selectedBeast && (
+        <SelectedBeast beast={selectedBeast} onClose={() => setSelectedBeast(null)} />
+      )}
+    </>
+  );
 }
-     
 
-export default App
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+export default App;

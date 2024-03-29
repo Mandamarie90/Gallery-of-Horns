@@ -4,14 +4,18 @@ function HornedBeast(props) {
   const [favoriteCount, setFavoriteCount] = useState(0);
 
   const handleFavoriteClick = () => {
-    // Increment the favorite count by 1 each time the favorite button is clicked
     setFavoriteCount(prevCount => prevCount + 1);
   };
 
   return (
     <div>
       <h2>{props.title}</h2>
-      <img src={props.imageUrl} alt={props.title} title={props.title} />
+      <img 
+        src={props.imageUrl} 
+        alt={props.title} 
+        title={props.title} 
+        onClick={props.onSelect} // Attach onSelect function to onClick event
+      />
       <p>{props.description}</p>
       <button onClick={handleFavoriteClick}>Favorite</button>
       <p>

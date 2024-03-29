@@ -1,20 +1,20 @@
+import React from 'react';
 import HornedBeast from './HornedBeast';
-import hornedBeastsData from '/hornedBeastsData.json'
 
-function Gallery() {
-
+function Gallery({ beasts, onSelectBeast }) {
   return (
     <div>
-      {hornedBeastsData.map((beast, index) => (
+      {beasts.map((beast) => (
         <HornedBeast
-          key={index}
+          key={beast._id}
           title={beast.title}
           imageUrl={beast.image_url}
           description={beast.description}
+          onSelect={() => onSelectBeast(beast)} 
         />
       ))}
     </div>
   );
 }
 
-export default Gallery
+export default Gallery;
