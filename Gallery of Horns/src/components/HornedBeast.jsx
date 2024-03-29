@@ -8,6 +8,10 @@ function HornedBeast(props) {
     setFavoriteCount(prevCount => prevCount + 1);
   };
 
+const setBeast = (clickedBeast) => {
+props.onSelect(clickedBeast)
+}
+
   return (
     <div>
       <h2>{props.title}</h2>
@@ -15,7 +19,7 @@ function HornedBeast(props) {
         src={props.imageUrl} 
         alt={props.title} 
         title={props.title} 
-        onClick={props.onSelect} 
+        onClick={setBeast} 
         className="beast-image" // Add the beast-image class to the <img> element
       />
       <p>{props.description}</p>
@@ -28,3 +32,6 @@ function HornedBeast(props) {
 }
 
 export default HornedBeast;
+
+
+// create event handler for HornedBeast. 

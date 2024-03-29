@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ReactDOM from 'react-dom';
 import Gallery from './components/Gallery.jsx';
 import hornedBeastsData from '../hornedBeastsData.json'; 
+import SelectedBeast from './components/SelectedBeast.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -15,12 +16,12 @@ function App() {
     <>
       <Gallery beasts={hornedBeastsData} onSelectBeast={handleBeastSelect} />
       {selectedBeast && (
-        <SelectedBeast beast={selectedBeast} onClose={() => setSelectedBeast(null)} />
+        <SelectedBeast selectedBeast={selectedBeast} onClose={() => setSelectedBeast(null)} />
       )}
     </>
   );
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+ 
 
 export default App;
