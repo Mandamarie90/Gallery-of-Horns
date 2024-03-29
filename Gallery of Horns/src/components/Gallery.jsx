@@ -38,7 +38,7 @@ function Gallery({ beasts, onSelectBeast }) {
               title={beast.title}
               imageUrl={beast.image_url}
               description={beast.description}
-              onSelect={onSelectBeast} 
+              onSelect={()=> onSelectBeast(beast)} 
             />
           </Col>
         ))}
