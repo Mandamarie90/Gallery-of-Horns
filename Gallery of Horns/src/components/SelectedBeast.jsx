@@ -20,5 +20,5 @@ function SelectedBeast({ beast, onClose }) {
     </Modal>
   );
 }
-
+ 
 export default SelectedBeast;
