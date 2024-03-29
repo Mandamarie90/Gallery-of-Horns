@@ -9,7 +9,6 @@ function HornedBeast(props) {
   };
 
 const setBeast = (clickedBeast) => {
-  console.log(clickedBeast);
 props.onSelect(clickedBeast)
 }
 

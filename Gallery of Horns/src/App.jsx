@@ -9,7 +9,6 @@ function App() {
   const [selectedBeast, setSelectedBeast] = useState(null);
 
   const handleBeastSelect = (beast) => {
-    // console.log(beast);
     setSelectedBeast(beast); 
   };
 
