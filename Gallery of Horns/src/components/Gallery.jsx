@@ -1,4 +1,3 @@
-// Gallery.jsx
 import React from 'react';
 import HornedBeast from './HornedBeast';
 
@@ -11,7 +10,7 @@ function Gallery({ beasts, onSelectBeast }) {
           title={beast.title}
           imageUrl={beast.image_url}
           description={beast.description}
-          onSelect={() => onSelectBeast(beast)} // Pass onSelect function
+          onSelect={() => onSelectBeast(beast)} 
         />
       ))}
     </div>

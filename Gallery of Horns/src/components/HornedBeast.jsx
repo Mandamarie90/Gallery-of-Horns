@@ -10,7 +10,12 @@ function HornedBeast(props) {
   return (
     <div>
       <h2>{props.title}</h2>
-      <img src={props.imageUrl} alt={props.title} title={props.title} />
+      <img 
+        src={props.imageUrl} 
+        alt={props.title} 
+        title={props.title} 
+        onClick={props.onSelect} // Attach onSelect function to onClick event
+      />
       <p>{props.description}</p>
       <button onClick={handleFavoriteClick}>Favorite</button>
       <p>
