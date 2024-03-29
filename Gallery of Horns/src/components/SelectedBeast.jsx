@@ -23,5 +23,5 @@ console.log(image_url);
     </Modal>
   );
 }
- 
+  
 export default SelectedBeast;
